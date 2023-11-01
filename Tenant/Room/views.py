@@ -30,6 +30,11 @@ class UserDetail(generics.RetrieveAPIView):
     serializer_class = CustomUserListDetailSerializer
 
 
+class UserUpdate(generics.UpdateAPIView):
+    queryset = CustomUser.objects.all()
+    serializer_class = CustomUserListDetailSerializer
+
+
 class ApartmentViewSet(viewsets.ModelViewSet):
     #permission_classes = (IsAuthenticated,)
     queryset = Apartment.objects.all().order_by('-list_date')
@@ -41,6 +46,9 @@ class ApartmentViewSet(viewsets.ModelViewSet):
         user = CustomUser.objects.get(pk = self.request.data["owner_pkey"])
         serializer.save(owner=user)
         print("end breakpoint")
+
+
+
 
 
 
