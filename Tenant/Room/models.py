@@ -50,11 +50,11 @@ class Apartment(models.Model):
                                                           ('Apartment', 'Apartment'), ('Villa', 'Villa')), blank=True, null=True)
 
 
-    photo = models.ImageField(upload_to=upload_to, blank=True, null=True)
-    photo_1 = models.ImageField(upload_to=upload_to, default='default_image.jpg', null=True)
-    photo_2 = models.ImageField(upload_to=upload_to, default='default_image.jpg', null=True)
-    photo_3 = models.ImageField(upload_to=upload_to, default='default_image.jpg', null=True)
-    photo_4 = models.ImageField(upload_to=upload_to, default='default_image.jpg', null=True)
+    photo = models.ImageField(upload_to=upload_to, default='default_image.jpg', null=True)
+    photo_1 = models.ImageField(upload_to=upload_to, null=True)
+    photo_2 = models.ImageField(upload_to=upload_to, null=True)
+    photo_3 = models.ImageField(upload_to=upload_to, null=True)
+    photo_4 = models.ImageField(upload_to=upload_to, null=True)
     list_date = models.DateTimeField(default=timezone.now, blank=True)
     
     def __str__(self):
